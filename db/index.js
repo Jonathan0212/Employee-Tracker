@@ -67,5 +67,117 @@ function askQuestions() {
                     });
                 })
                 break;
-                
-}
+
+                case 'addRole':
+                    inqurier.prompt([
+                        {
+                            type:'input',
+                            message: 'What is the name of the role to add?',
+                            name: 'newRole',
+                        },
+                        {
+                            type:'input',
+                            message:'What is the salary for the role to add?',
+                            message:'newSalary',
+                        },
+                        {
+                            type:'input',
+                            message:'What is the department id for the role to add?',
+                            name:'newDeptId',
+                        },
+                    ])
+                    .then((answers) => {
+                        newRole = answers.newRole
+                        newSalary = answers.newSalary
+                        newDeptId = answers.newDeptId
+                        db.query(`INSERT INTO roles (title, salary, department_id)
+                        VALUES ("${newRole}", "${newSalary}", ${newDeptId};`, function (err, results) {
+                            console.log(newRole + "has been added to the role table");
+                            if (err) throw err;
+                            console.log("1 record inserted")
+                            confirmCount();
+                        });
+                    })
+                    break;
+
+                    case "addEmployee":
+                        inqurier.prompt([
+                            {
+                                type: 'input',
+                                message: 'What is the first name of the employee to add?',
+                                name:'newFName',
+                            },
+                            {
+                                type: 'input',
+                                message:'What is the last name of the employee to add?',
+                                name: 'newLName',
+                            },
+                            {
+                                type:'input',
+                                message:'What is the role id for the employee to add?',
+                                name:'newRoleId',
+                            },
+                            {
+                                type:'input',
+                                message:'What is the manager id of the employee to add?',
+                                name:'newMGRId'
+                            },
+                        ])
+                        .then((answers) => {
+                            newFName = answers.newFName
+                            newLName = answers.newLName
+                            newRoleId = answers.newRoleId
+                            newMgrId = answers.newMGRId
+                            db.query(`INSERT INTO employee (first_name, last_name, role_id, manager_id)
+                            VALUES ("${newFName}"), "${newLName}", ${newRoleId}, ${newMGRId});`,
+                            function (err, results) {
+                                console.log(newFName + " " + newLName + " has been added to the table");
+                                if(err) throw err;
+                                console.log("1 record inserted")
+                                confirmCount();
+                            });
+                        })
+                    break;
+                    
+                    case 'updateEmployee':
+                        inqurier.prompt ([
+                            {
+                                type: 'input',
+                                message: 'Enter the id of an employee to update:',
+                                name: 'targetEmpId',
+                            },
+                            {
+                                type: 'input',
+                                message: 'What is the new role id for this employee',
+                                name: 'newRoleId',
+                            },
+                        ])
+                        .then((answers) => {
+                            targetEmpId = answers.targetEmpId
+                            newRoleId = answers.newRoleId
+                            db.query(`UPDATE employee 
+                            SET role_id = ${newRoleId}
+                            WHERE id =  ${targetEmpId};`,
+                            function (err, results) {
+                                console.log('Employee id' + targetEmpId + 'has been updated with a new role' + newRoleId);
+                                if (err) throw err;
+                                console.log('1 record inserted')
+                                confirmCount();
+                            });
+                        })
+                        break;
+                    default: console.log('No valid option chosen');
+                }
+        });
+};
+function confirmCount() {
+    confirm('Would you like to continue?')
+    .then(function confirmed() {
+        askQuestions();
+    }, function cancelled() {
+        console.log('Goodbye!');
+    });
+};
+
+askQuestions();
+
