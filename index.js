@@ -1,9 +1,17 @@
 const mysql = require('mysql2');
 const inquirer = require('inquirer');
 require('console.table');
-const confirm = require('inquirer-confirm')
-const db = require('./db');
-
+const confirm = require('inquirer-confirm');
+require('dotenv').config();
+const db = mysql.createConnection (
+    {
+        host:'localhost',
+        database: process.env.DB_NAME,
+        user: process.env.DB_USER,
+        password: process.env.DB_PW
+    },
+    console.log('Successfully Connected!')
+);
 
 
 function askQuestions() {
