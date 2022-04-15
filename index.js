@@ -1,5 +1,13 @@
+const mysql = require('mysql2');
+const inquirer = require('inquirer');
+require('console.table');
+const confirm = require('inquirer-confirm')
+const db = require('./db');
+
+
+
 function askQuestions() {
-    inqurier.prompt([{
+    inquirer.prompt([{
         type:'list',
         name:'option',
         choices: [{
@@ -36,7 +44,7 @@ function askQuestions() {
                     });  
                     
                 break;
-// ROLES
+            // ROLES
                 case 'viewRoles':
                     db.query('SELECT * FROM roles', function (err, results) {
                         console.table(results);
