@@ -107,7 +107,7 @@ function askQuestions() {
                         newSalary = answers.newSalary
                         newDeptId = answers.newDeptId
                         db.query(`INSERT INTO roles (title, salary, department_id)
-                        VALUES ("${newRole}", "${newSalary}", ${newDeptId});`, function (err, results) {
+                        VALUES ("${newRole}", "${newSalary}", "${newDeptId}");`, function (err, results) {
                             console.log(newRole + "has been added to the roles");
                             if (err) throw err;
                             console.log("1 record inserted")
@@ -145,7 +145,7 @@ function askQuestions() {
                             newRoleId = answers.newRoleId
                             newMGRId = answers.newMGRId
                             db.query(`INSERT INTO employee (first_name, last_name, role_id, manager_id)
-                            VALUES ("${newFName}"), "${newLName}", ${newRoleId}, ${newMGRId});`,
+                            VALUES ("${newFName}", "${newLName}", ${newRoleId}, ${newMGRId});`,
                             function (err, results) {
                                 console.log(newFName + " " + newLName + " has been added to the table");
                                 if(err) throw err;
