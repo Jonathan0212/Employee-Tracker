@@ -68,14 +68,14 @@ function askQuestions() {
                 break;
 
                 case 'addDepartment':
-                    inquirer.prompt ({
+                    inquirer.prompt({
                         type: 'input',
                         message: 'What is the name of the department to add?',
                         name: 'newDept'
                     })
                     .then((answers) => {
                         newDept = answers.newDept
-                        db.query(`INSERT INTO department (name) VALUES ("{newDept}");`, function (err,results) {
+                        db.query(`INSERT INTO department (name) VALUES ("${newDept}");s`, function (err,results) {
                         console.log(newDept + 'has been added');
                         if (err) throw err;
                         console.log('1 record inserted')
