@@ -7,7 +7,7 @@ Employee Tracker application allows users to keep track of employee records. The
 
 * [Description](#Description)
 * [Technologies](#Technologies)
-* [Installation](#Installation)
+* [Demo](#Demo)
 * [Credits](#Credits)
 * [Contact](#Contact)
 * [License](#License)
@@ -21,11 +21,11 @@ Employee Tracker application allows users to keep track of employee records. The
 ## Installation 
 * When installing the employee-tracker application start off by running `npm install`. After, login into MySQL server in the commmand line proceed with using `source db/` syntax for each sql file in chronological order. Lastly, after sourcing each sql file type in `npm start` or `node server index.js` to run the application!
 
-## Screenshots
+## Demo
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/93745345/163687771-4400f7bf-b91e-476d-8d31-bf0c0644c03e.gif)
 
 
-
+[Demo-Download-Link](https://drive.google.com/file/d/1GDU7gsQus-iG7A2ZMHFPrhLL5xxKJHZ9/view?usp=sharing)
 
 
 ## Credits 
