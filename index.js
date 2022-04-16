@@ -68,7 +68,7 @@ function askQuestions() {
                 break;
 
                 case 'addDepartment':
-                    inqurier.prompt ({
+                    inquirer.prompt ({
                         type: 'input',
                         message: 'What is the name of the department to add?',
                         name: 'newDept'
@@ -85,7 +85,7 @@ function askQuestions() {
                 break;
 
                 case 'addRole':
-                    inqurier.prompt([
+                    inquirer.prompt([
                         {
                             type:'input',
                             message: 'What is the name of the role to add?',
@@ -117,7 +117,7 @@ function askQuestions() {
                     break;
 
                     case "addEmployee":
-                        inqurier.prompt([
+                        inquirer.prompt([
                             {
                                 type: 'input',
                                 message: 'What is the first name of the employee to add?',
@@ -156,7 +156,7 @@ function askQuestions() {
                     break;
                     
                     case 'updateEmployee':
-                        inqurier.prompt ([
+                        inquirer.prompt ([
                             {
                                 type: 'input',
                                 message: 'Enter the id of an employee to update:',
