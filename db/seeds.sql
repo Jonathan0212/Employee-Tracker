@@ -19,6 +19,6 @@ VALUES
     ('Fives', 'Trooper', 2, NULL),
     ('Hunter', 'Trooper', 4, 1),
     ('Echo', 'Trooper', 3, NULL),
-    ('Wrecker, Trooper', 4, NULL),
+    ('Wrecker', 'Trooper', 4, NULL),
     ('Commander', 'Cody', 1, 1),
     ('Hevy', 'Trooper', 2, NULL);
