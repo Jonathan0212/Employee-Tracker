@@ -14,10 +14,11 @@ VALUES
     (5, '187th Legion Troopers', 88888.99, 4);
 
 INSERT into employee (first_name, last_name, role_id, manager_id)
+VALUES
     ('Captain', 'Rex', 3, 1),
     ('Fives', 'Trooper', 2, NULL),
     ('Hunter', 'Trooper', 4, 1),
     ('Echo', 'Trooper', 3, NULL),
     ('Wrecker, Trooper', 4, NULL),
     ('Commander', 'Cody', 1, 1),
-    ('Hevy', 'Trooper', 2, NULL)
+    ('Hevy', 'Trooper', 2, NULL);
