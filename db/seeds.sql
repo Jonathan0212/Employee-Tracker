@@ -5,7 +5,7 @@ VALUES
     (3, 'Intern Software Engineer'),
     (4, 'Full Stack Software Engineer');
 
-INSERT into roles (id, title, salary, department_id)
+INSERT INTO roles (id, title, salary, department_id)
 VALUES 
     (1, 'Marshall Trooper', 79999.99, 1),
     (2, '501st Legion Troopers', 99999.99, 2),
@@ -13,7 +13,7 @@ VALUES
     (4, 'The Bad Batch', 9999999.99, 2),
     (5, '187th Legion Troopers', 88888.99, 4);
 
-INSERT into employee (first_name, last_name, role_id, manager_id)
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES
     ('Captain', 'Rex', 3, 1),
     ('Fives', 'Trooper', 2, NULL),

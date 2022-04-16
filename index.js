@@ -75,7 +75,7 @@ function askQuestions() {
                     })
                     .then((answers) => {
                         newDept = answers.newDept
-                        db.query(`INSERT INTO department (name) VALUES ("${newDept}");s`, function (err,results) {
+                        db.query(`INSERT INTO department (name) VALUES ("${newDept}");`, function (err,results) {
                         console.log(newDept + 'has been added');
                         if (err) throw err;
                         console.log('1 record inserted')
@@ -94,7 +94,7 @@ function askQuestions() {
                         {
                             type:'input',
                             message:'What is the salary for the role to add?',
-                            message:'newSalary',
+                            name:'newSalary',
                         },
                         {
                             type:'input',
@@ -107,8 +107,8 @@ function askQuestions() {
                         newSalary = answers.newSalary
                         newDeptId = answers.newDeptId
                         db.query(`INSERT INTO roles (title, salary, department_id)
-                        VALUES ("${newRole}", "${newSalary}", ${newDeptId};`, function (err, results) {
-                            console.log(newRole + "has been added to the role table");
+                        VALUES ("${newRole}", "${newSalary}", ${newDeptId});`, function (err, results) {
+                            console.log(newRole + "has been added to the roles");
                             if (err) throw err;
                             console.log("1 record inserted")
                             confirmCount();
@@ -143,7 +143,7 @@ function askQuestions() {
                             newFName = answers.newFName
                             newLName = answers.newLName
                             newRoleId = answers.newRoleId
-                            newMgrId = answers.newMGRId
+                            newMGRId = answers.newMGRId
                             db.query(`INSERT INTO employee (first_name, last_name, role_id, manager_id)
                             VALUES ("${newFName}"), "${newLName}", ${newRoleId}, ${newMGRId});`,
                             function (err, results) {
